@@ -1,1 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory and Warehouse Management System</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Inventory System</h2>
+
+        <button onclick="showSection('dashboard')">
+            Dashboard
+        </button>
+
+        <button onclick="showSection('products')">
+            Products
+        </button>
+
+        <button onclick="showSection('suppliers')">
+            Suppliers
+        </button>
+
+        <button onclick="showSection('employees')">
+            Employees
+        </button>
+
+        <button onclick="showSection('warehouses')">
+            Warehouses
+        </button>
+
+        <button onclick="showSection('inventory')">
+            Inventory
+        </button>
+
+        <button onclick="showSection('purchases')">
+            Purchases
+        </button>
+
+        <button onclick="showSection('customers')">
+            Customers
+        </button>
+
+        <button onclick="showSection('sales')">
+            Sales
+        </button>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <header>
+            <h1>Inventory and Warehouse Management System</h1>
+            <p>DBMS Cornerstone Project</p>
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="section active">
+
+            <h2>Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Products</h3>
+                    <p>25</p>
+                </div>
+
+                <div class="card">
+                    <h3>Suppliers</h3>
+                    <p>10</p>
+                </div>
+
+                <div class="card">
+                    <h3>Warehouses</h3>
+                    <p>5</p>
+                </div>
+
+                <div class="card">
+                    <h3>Customers</h3>
+                    <p>40</p>
+                </div>
+
+            </div>
+
+            <div class="welcome">
+                <h2>Welcome</h2>
+
+                <p>
+                    This system helps manage products, suppliers,
+                    employees, warehouses, inventory, purchases,
+                    customers and sales.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Products -->
+        <section id="products" class="section">
+
+            <h2>Products</h2>
+
+            <input type="text"
+                   id="productSearch"
+                   placeholder="Search Product..."
+                   onkeyup="searchTable('productSearch','productTable')">
+
+            <table id="productTable">
+
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Supplier ID</th>
+                </tr>
+
+                <tr>
+                    <td>101</td>
+                    <td>Laptop</td>
+                    <td>Electronics</td>
+                    <td>55000</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>Keyboard</td>
+                    <td>Accessories</td>
+                    <td>1200</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>Mouse</td>
+                    <td>Accessories</td>
+                    <td>700</td>
+                    <td>2</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Suppliers -->
+        <section id="suppliers" class="section">
+
+            <h2>Suppliers</h2>
+
+            <table>
+
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Supplier Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>ABC Suppliers</td>
+                    <td>9876543210</td>
+                    <td>Hyderabad</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>XYZ Traders</td>
+                    <td>9123456780</td>
+                    <td>Guntur</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Employees -->
+        <section id="employees" class="section">
+
+            <h2>Employees</h2>
+
+            <table>
+
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Contact</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Rahul</td>
+                    <td>Manager</td>
+                    <td>9876543210</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Priya</td>
+                    <td>Staff</td>
+                    <td>9123456780</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Warehouses -->
+        <section id="warehouses" class="section">
+
+            <h2>Warehouses</h2>
+
+            <table>
+
+                <tr>
+                    <th>Warehouse ID</th>
+                    <th>Warehouse Name</th>
+                    <th>Location</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Main Warehouse</td>
+                    <td>Guntur</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Central Warehouse</td>
+                    <td>Vijayawada</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Inventory -->
+        <section id="inventory" class="section">
+
+            <h2>Inventory</h2>
+
+            <table>
+
+                <tr>
+                    <th>Inventory ID</th>
+                    <th>Product ID</th>
+                    <th>Warehouse ID</th>
+                    <th>Quantity</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>50</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>102</td>
+                    <td>1</td>
+                    <td>100</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Purchases -->
+        <section id="purchases" class="section">
+
+            <h2>Purchases</h2>
+
+            <table>
+
+                <tr>
+                    <th>Purchase ID</th>
+                    <th>Product ID</th>
+                    <th>Supplier ID</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>2026-09-01</td>
+                    <td>1100000</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Customers -->
+        <section id="customers" class="section">
+
+            <h2>Customers</h2>
+
+            <table>
+
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Arjun</td>
+                    <td>9876543210</td>
+                    <td>Guntur</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Sneha</td>
+                    <td>9123456780</td>
+                    <td>Vijayawada</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- Sales -->
+        <section id="sales" class="section">
+
+            <h2>Sales</h2>
+
+            <table>
+
+                <tr>
+                    <th>Sale ID</th>
+                    <th>Product ID</th>
+                    <th>Customer ID</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2026-09-10</td>
+                    <td>110000</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
